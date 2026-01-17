@@ -25,7 +25,6 @@ body {
     position: relative;
 }
 
-/* Fundo com gradiente suave fixo */
 .background-glow {
     position: fixed;
     top: 0;
@@ -36,7 +35,6 @@ body {
     z-index: -1;
 }
 
-/* --- HERO SECTION --- */
 .hero {
     text-align: center;
     padding: 4rem 1.5rem;
@@ -54,12 +52,10 @@ body {
 }
 
 .logo-neon a {
-    text-decoration: none; /* Remove o sublinhado padrão do link */
-    border: none;          /* Remove bordas, caso a linha colorida seja uma borda */
-    outline: none;         /* Remove contorno ao clicar */
+    text-decoration: none;
+    border: none;
+    outline: none;
 }
-
-
 
 .gold-part {
     color: var(--gold);
@@ -68,10 +64,7 @@ body {
 
 .blue-part {
     color: #fff;
-    text-shadow:
-        0 0 10px var(--blue-neon),
-        0 0 40px var(--blue-neon),
-        0 0 80px var(--blue-neon);
+    text-shadow: 0 0 10px var(--blue-neon), 0 0 40px var(--blue-neon), 0 0 80px var(--blue-neon);
 }
 
 .neon-off {
@@ -89,7 +82,6 @@ body {
     font-weight: 600;
 }
 
-/* --- SEARCH BAR MODERNA --- */
 .search-wrapper {
     display: flex;
     justify-content: center;
@@ -106,7 +98,6 @@ body {
     max-width: 600px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(12px);
-    
 }
 
 .search-bar:focus-within {
@@ -135,7 +126,6 @@ body {
     color: #64748b;
 }
 
-/* --- ÁREA DE FILTROS E SELECT --- */
 .filters {
     display: flex;
     align-items: center;
@@ -158,40 +148,31 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* O seletor principal */
 .filter-select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-
     background: transparent;
     border: none;
-    
-
     color-scheme: dark;
-
     color: var(--text-white);
     font-family: 'Outfit', sans-serif;
     font-size: 0.9rem;
     cursor: pointer;
     outline: none;
-
     padding: 10px 30px 10px 15px;
     font-weight: 500;
     width: 100%;
 }
 
-/* Estilizando as opções internas */
 .filter-select option {
     background-color: #0f172a;
     color: #e2e8f0;
     padding: 15px;
     font-size: 1rem;
     font-family: 'Outfit', sans-serif;
-    
 }
 
-/* Tenta customizar a scrollbar no Chrome/Safari (Funciona em alguns navegadores no select aberto) */
 .filter-select::-webkit-scrollbar {
     width: 8px;
     background: #0f172a;
@@ -202,18 +183,14 @@ body {
     border-radius: 4px;
 }
 
-/* Ícone da seta customizada */
 .arrow-icon {
     position: absolute;
     right: 10px;
     pointer-events: none;
-    /* Deixa clicar "através" do ícone */
     font-size: 1.2rem;
     color: var(--blue-neon);
-    /* Mudei para azul neon para destacar */
 }
 
-/* Botão de busca */
 .search-btn {
     background: var(--blue-neon);
     border: none;
@@ -227,7 +204,6 @@ body {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    /* Garante que o botão não amasse */
 }
 
 .search-btn:hover {
@@ -236,7 +212,6 @@ body {
     box-shadow: 0 0 15px var(--gold-glow);
 }
 
-/* --- CONTEÚDO --- */
 .content-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -284,11 +259,8 @@ body {
     color: var(--bg-dark);
 }
 
-/* --- GRID E CARDS (ESTILO IMERSIVO) --- */
-
 .movie-grid {
     display: grid;
-    /* Grid responsivo que se ajusta automaticamente */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding-bottom: 3rem;
@@ -298,28 +270,20 @@ body {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    /* O que estiver fora da borda some */
     aspect-ratio: 2/3;
-    /* Força o formato retangular de pôster */
     cursor: pointer;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     background-color: var(--card-bg);
-    /* Fundo caso a img falhe */
 }
 
-/* Efeito de "Levitar" o card inteiro */
 .movie-card:hover {
     transform: scale(1.05);
-    /* Cresce levemente */
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
     z-index: 2;
-    /* Fica acima dos vizinhos */
     border: 1px solid var(--gold);
-    /* Borda dourada sutil */
 }
 
-/* --- Container da Imagem (Fundo do Card) --- */
 .poster-container {
     width: 100%;
     height: 100%;
@@ -333,12 +297,10 @@ body {
     transition: filter 0.3s;
 }
 
-/* Escurece a imagem levemente no hover para o texto ler melhor */
 .movie-card:hover .poster-container img {
     filter: brightness(0.6);
 }
 
-/* --- Nota (Badge) --- */
 .rating-badge {
     position: absolute;
     top: 10px;
@@ -361,21 +323,17 @@ body {
     font-size: 14px;
 }
 
-/* --- Botão de Play (Centralizado) --- */
 .overlay {
     position: absolute;
     inset: 0;
-    /* Ocupa todo o card */
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    /* Invisível inicialmente */
     transition: opacity 0.3s ease;
     z-index: 4;
 }
 
-/* Aparece o play no hover */
 .movie-card:hover .overlay {
     opacity: 1;
 }
@@ -398,27 +356,20 @@ body {
 
 .movie-card:hover .play-btn {
     transform: scale(1);
-    /* Animação de pop */
 }
 
-/* --- Informações do Filme (Deslizam de baixo) --- */
 .movie-info {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 20px 15px;
-
-    /* Gradiente para o texto ficar legível sobre a imagem */
     background: linear-gradient(to top, rgba(15, 23, 42, 1) 10%, rgba(15, 23, 42, 0.8) 50%, transparent 100%);
-
     transform: translateY(110%);
-    /* Fica ESCONDIDO para baixo (100% + folga) */
     transition: transform 0.3s ease-in-out;
     z-index: 5;
 }
 
-/* No hover, as infos sobem */
 .movie-card:hover .movie-info {
     transform: translateY(0);
 }
@@ -427,12 +378,8 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--gold);
-    /* Usa o dourado para destacar o título */
     margin-bottom: 6px;
     letter-spacing: -0.5px;
-    /* Letras levemente mais juntas (moderno) */
-
-    /* Garante que fique em uma linha só com ... no final */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -443,7 +390,6 @@ body {
     justify-content: space-between;
     font-size: 0.8rem;
     color: #cbd5e1;
-    /* Cinza claro */
 }
 
 .badge-lang {
@@ -454,9 +400,6 @@ body {
     text-transform: uppercase;
 }
 
-
-
-/* O Botão de Sorteio */
 .shuffle-btn {
     background: transparent;
     border: 1px solid var(--text-gray);
@@ -475,10 +418,9 @@ body {
 
 .shuffle-btn .material-icons-round {
     font-size: 1.2rem;
-    transition: transform 0.5s ease; /* Animação do ícone */
+    transition: transform 0.5s ease;
 }
 
-/* Efeito Hover (Passar o mouse) */
 .shuffle-btn:hover {
     border-color: var(--gold);
     color: var(--gold);
@@ -487,57 +429,51 @@ body {
     transform: translateY(-2px);
 }
 
-/* Faz o ícone girar ao passar o mouse */
 .shuffle-btn:hover .spin-icon {
     transform: rotate(180deg);
 }
 
-/* Clique (Efeito de pressionar) */
 .shuffle-btn:active {
     transform: scale(0.95);
 }
 
-/* Container de Ações (O Carrossel) */
 .section-header-action {
     display: flex;
     align-items: center;
     gap: 15px;
     width: 100%;
     position: relative;
-    /* Removemos o overflow: hidden do pai para garantir que o wrapper filho controle isso */
 }
 
 .genre-carousel-wrapper {
     flex-grow: 1;
-    overflow: hidden; /* Esconde o que sai da tela */
+    overflow: hidden;
     position: relative;
-    height: 50px; /* Altura fixa para garantir a área do mouse */
+    height: 50px;
     display: flex;
     align-items: center;
-    
-    /* Máscara suave nas pontas para indicar que há mais conteúdo */
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
+
 .genre-track {
     display: flex;
     gap: 12px;
-    position: absolute; /* Absoluto para movermos via Left/Transform */
+    position: absolute;
     left: 0;
-    transition: transform 0.1s linear; /* Suavidade leve */
+    transition: transform 0.1s linear;
     will-change: transform;
-    padding: 0 40px; /* Um respiro nas pontas */
+    padding: 0 40px;
 }
 
 .genre-track:hover {
     animation-play-state: paused;
 }
-/* Esconde Scrollbar no Chrome/Safari/Opera */
+
 .section-header-action::-webkit-scrollbar {
     display: none;
 }
 
-/* Os botões dentro do carrossel */
 .genre-quick-btn {
     flex-shrink: 0;
     white-space: nowrap;
@@ -550,7 +486,7 @@ body {
     font-size: 0.9rem;
     font-weight: 500;
     transition: all 0.3s ease;
-    user-select: none; /* Impede selecionar texto ao arrastar */
+    user-select: none;
 }
 
 .genre-quick-btn:hover {
@@ -560,18 +496,14 @@ body {
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
 }
 
-/* A Animação Keyframe */
-
-
-/* --- ESTILO DO MODAL (POP-UP) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Fundo escuro atrás */
-    backdrop-filter: blur(8px); /* Desfoque no fundo */
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -581,7 +513,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Quando o modal está ativo */
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
@@ -592,13 +523,13 @@ body {
     width: 90%;
     max-width: 800px;
     border-radius: 20px;
-    overflow: hidden; /* Para a imagem não sair das bordas */
+    overflow: hidden;
     position: relative;
     box-shadow: 0 25px 50px rgba(0,0,0,0.5);
     border: 1px solid rgba(255,255,255,0.1);
     transform: scale(0.9);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    max-height: 90vh; /* Se a tela for pequena, permite scroll */
+    max-height: 90vh;
     overflow-y: auto;
 }
 
@@ -607,28 +538,27 @@ body {
 }
 
 .modal-content::-webkit-scrollbar {
-    width: 8px; /* Largura fina e elegante */
+    width: 8px;
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.3); /* Fundo bem escuro e transparente */
-    margin: 10px 0; /* Um pequeno espaço nas pontas para não colar */
+    background: rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
     border-radius: 10px;
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-    background-color: #444; /* Um cinza discreto quando parada */
-    border-radius: 20px;    /* Borda bem redonda */
-    border: 2px solid transparent; /* Truque para a barra não ficar "gorda" demais */
+    background-color: #444;
+    border-radius: 20px;
+    border: 2px solid transparent;
     background-clip: content-box;
 }
+
 .modal-content::-webkit-scrollbar-thumb:hover {
-    background-color: var(--gold); /* Fica DOURADA quando interage */
+    background-color: var(--gold);
     scrollbar-width: thin;
 }
 
-
-/* Botão de Fechar (X) */
 .close-modal {
     position: absolute;
     top: 15px;
@@ -651,7 +581,6 @@ body {
     color: black;
 }
 
-/* Header com Imagem de Fundo (Backdrop) */
 .modal-header-img {
     height: 300px;
     background-size: cover;
@@ -659,7 +588,6 @@ body {
     position: relative;
 }
 
-/* Degradê para misturar a imagem com o conteúdo */
 .modal-header-img::after {
     content: '';
     position: absolute;
@@ -670,7 +598,6 @@ body {
     background: linear-gradient(to top, var(--bg-dark), transparent);
 }
 
-/* Poster Pequeno flutuando */
 .modal-poster-wrapper {
     position: absolute;
     bottom: -160px;
@@ -690,7 +617,6 @@ body {
     object-fit: cover;
 }
 
-/* Corpo do Texto */
 .modal-body {
     padding: 180px 40px 40px; 
     position: relative;
@@ -764,7 +690,6 @@ body {
     box-shadow: 0 0 15px var(--gold-glow);
 }
 
-/* --- PAGINAÇÃO --- */
 .pagination {
     display: flex;
     justify-content: center;
@@ -781,7 +706,7 @@ body {
     color: var(--text-white);
     width: 45px;
     height: 45px;
-    border-radius: 50%; /* Botões redondos */
+    border-radius: 50%;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
@@ -800,7 +725,6 @@ body {
     box-shadow: 0 0 10px var(--blue-glow);
 }
 
-/* Estilo da página ATIVA (onde o usuário está) */
 .page-btn.active {
     background: var(--gold);
     color: var(--bg-dark);
@@ -810,14 +734,12 @@ body {
     transform: scale(1.1);
 }
 
-/* Botões de Prev/Next (setas) podem ser um pouco diferentes se quiser */
 .page-btn.nav-special {
-    border-radius: 12px; /* Quadrado arredondado */
+    border-radius: 12px;
     width: auto;
     padding: 0 20px;
 }
 
-/* Quando o botão está desabilitado (ex: anterior na pag 1) */
 .page-btn.disabled {
     opacity: 0.3;
     cursor: not-allowed;
@@ -830,25 +752,26 @@ body {
     justify-content: center;
     padding: 50px;
 }
+
 .spinner {
     border: 4px solid rgba(255, 255, 255, 0.1);
-    border-left-color: #00d4ff; /* Sua cor neon */
+    border-left-color: #00d4ff;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
 }
+
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* --- FOOTER --- */
 .main-footer {
-    background-color: #0b1120; /* Um tom mais escuro que o fundo do site */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha sutil no topo */
+    background-color: #0b1120;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 4rem;
     padding-bottom: 2rem;
-    margin-top: 4rem; /* Afasta o footer do conteúdo principal */
+    margin-top: 4rem;
     font-family: 'Outfit', sans-serif;
-    color: #94a3b8; /* Cor cinza claro para texto secundário */
+    color: #94a3b8;
 }
 
 .footer-content {
@@ -856,22 +779,21 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr; /* Coluna do logo é maior */
+    grid-template-columns: 1.5fr 1fr 1fr;
     gap: 2rem;
 }
 
-/* Estilo do Logo no Footer */
 .footer-logo {
     font-size: 2rem;
     font-weight: 900;
-    color: #eab308; /* Dourado */
+    color: #eab308;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: -1px;
 }
 
 .footer-logo .blue-text {
-    color: #00d4ff; /* Azul Neon */
+    color: #00d4ff;
     text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
@@ -881,7 +803,6 @@ body {
     max-width: 300px;
 }
 
-/* Títulos das seções */
 .footer-section h3 {
     color: #fff;
     font-size: 1.1rem;
@@ -889,49 +810,44 @@ body {
     font-weight: 600;
 }
 
-/* Container dos Links Sociais */
 .footer-links {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza horizontalmente */
-    gap: 1.5rem; /* Espaço entre os ícones */
+    justify-content: center;
+    gap: 1.5rem;
     margin: 1rem 0;
 }
 
-/* Estilo do Link (O container do ícone) */
 .social-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #94a3b8; /* Cor padrão cinza claro */
+    color: #94a3b8;
     transition: all 0.3s ease;
 }
 
-/* Estilo do SVG dentro do Link */
 .social-icon svg {
-    width: 28px;  /* Tamanho do ícone */
+    width: 28px;
     height: 28px;
-    fill: currentColor; /* ISSO É O SEGREDO: Pega a cor do texto do pai */
+    fill: currentColor;
 }
 
-/* Efeito Hover (Ao passar o mouse) */
 .social-icon:hover {
-    color: #00d4ff; /* Muda a cor para o azul neon */
-    transform: translateY(-3px) scale(1.1); /* Sobe um pouco e aumenta */
-    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5)); /* Brilho neon */
+    color: #00d4ff;
+    transform: translateY(-3px) scale(1.1);
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
 }
 
 .footer-link:hover {
-    color: #00d4ff; /* Fica azul ao passar o mouse */
-    transform: translateX(5px); /* Move levemente para a direita */
+    color: #00d4ff;
+    transform: translateX(5px);
 }
 
 .footer-link .material-icons-round {
     font-size: 1.2rem;
 }
 
-/* Área do TMDB */
 .tmdb-area p {
     font-size: 0.8rem;
     margin-bottom: 0.5rem;
@@ -947,7 +863,6 @@ body {
     opacity: 1;
 }
 
-/* Rodapé inferior (Copyright) */
 .footer-bottom {
     margin-top: 3rem;
     padding-top: 1.5rem;
@@ -956,124 +871,48 @@ body {
     font-size: 0.85rem;
     color: #64748b;
 }
+
 .reservado{
     margin-left: 16%;
 }
 
-
-
-
-/* Responsivo para celular */
-@media (max-width: 600px) {
-    .section-header-action {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    .shuffle-btn span:last-child {
-        display: none; /* Esconde o texto "Aleatório" no celular, deixa só o ícone */
-    }
-
-        .modal-header-img { height: 200px; }
-    .modal-poster-wrapper { width: 90px; bottom: -30px; }
-    .modal-body { padding: 50px 20px 30px; }
-    .modal-body h2 { font-size: 1.5rem; }
-}
-
-/* Pequeno ajuste no mobile para não ficar bagunçado */
-
-/* --- Ajuste Mobile (Touch) --- */
-/* No celular não tem hover, então deixamos o texto sempre visível ou fixo */
-@media (max-width: 768px) {
-    .movie-card .movie-info {
-        transform: translateY(0);
-        /* Sempre visível no mobile */
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
-        padding-bottom: 10px;
-    }
-
-    .movie-card .rating-badge {
-        font-size: 0.7rem;
-        padding: 2px 6px;
-    }
-
-    .overlay {
-        display: none;
-        /* Esconde botão de play gigante no mobile para ver a arte */
-    }
-    .section-header-action {
-        margin-top: 15px;
-        justify-content: flex-start;
-    }
-     .footer-content {
-        grid-template-columns: 1fr; /* Vira uma coluna só */
-        text-align: center;
-        gap: 3rem;
-    }
-
-    .footer-desc {
-        margin: 0 auto; /* Centraliza o texto */
-    }
-
-    .footer-link {
-        justify-content: center; /* Centraliza os links */
-    }
-}
-
-/* --- CARROSSEL INFINITO (Versão Melhorada) --- */
 .infinite-carousel-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
-    /* Aumentei a margem para separar bem do topo */
     margin-bottom: 4rem;
     padding: 20px 0;
-    /* Espaço extra para a sombra e o hover não cortarem */
-
-    /* Fade nas pontas */
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .carousel-track {
     display: flex;
-    /* Aumentado de 15px para 40px (Mais espaçamento) */
     gap: 40px;
     width: max-content;
-
-    /* Aumentei o tempo para 80s porque a trilha ficou mais longa */
     animation: scrollLoop 80s linear infinite;
 }
 
-/* Pausa suave ao passar o mouse */
 .carousel-track:hover {
     animation-play-state: paused;
 }
 
 .carousel-card {
-    /* Aumentado de 140px para 220px (Filmes bem maiores) */
     width: 400px;
     border-radius: 16px;
-    /* Borda um pouco mais redonda */
     overflow: hidden;
     position: relative;
     transition: all 0.4s ease;
-    /* Transição mais suave */
     cursor: pointer;
     flex-shrink: 0;
-
-    /* Sombra para destacar do fundo */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-card:hover {
     transform: scale(1.1) translateY(-5px);
-    /* Cresce e sobe um pouquinho */
     z-index: 2;
     border: 2px solid var(--gold);
-    /* Borda dourada mais visível */
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    /* Sombra forte no hover */
 }
 
 .carousel-card img {
@@ -1082,47 +921,22 @@ body {
     object-fit: cover;
     display: block;
     aspect-ratio: 2/3;
-    /* Filtro levemente escuro que clareia ao passar o mouse */
     filter: brightness(0.85);
     transition: filter 0.4s ease;
 }
 
 .carousel-card:hover img {
     filter: brightness(1.1);
-    /* Brilha quando passa o mouse */
 }
 
 @keyframes scrollLoop {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        /* Atenção: Se o carrossel "pular" no final, ajustaremos o JS */
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-/* --- Ajuste Mobile --- */
-@media (max-width: 768px) {
-    .infinite-carousel-wrapper {
-        margin-bottom: 2rem;
-    }
+/* --- RESPONSIVIDADE (Media Queries Organizadas) --- */
 
-    .carousel-card {
-        /* No celular reduzimos um pouco, mas ainda maior que antes */
-        width: 140px;
-    }
-
-    .carousel-track {
-        gap: 20px;
-        /* Espaço menor no mobile para caber mais */
-        animation-duration: 40s;
-        /* Mais rápido no mobile */
-    }
-}
-
-/* --- RESPONSIVIDADE (Mobile) --- */
+/* Tablets e Celulares Maiores (até 768px) */
 @media (max-width: 768px) {
     .logo-neon {
         font-size: 3.5rem;
@@ -1132,7 +946,6 @@ body {
         padding: 5px;
     }
 
-    /* Agora mostramos o select no mobile, mas de forma ajustada */
     .filters {
         display: none;
     }
@@ -1150,7 +963,83 @@ body {
         gap: 1rem;
     }
 
+    .movie-card .movie-info {
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+        padding-bottom: 10px;
+    }
+
+    .movie-card .rating-badge {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+
+    .overlay {
+        display: none;
+    }
+    
     .movie-info h3 {
         font-size: 0.9rem;
+    }
+
+    .section-header-action {
+        margin-top: 15px;
+        justify-content: flex-start;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .footer-desc {
+        margin: 0 auto;
+    }
+
+    .footer-link {
+        justify-content: center;
+    }
+
+    .infinite-carousel-wrapper {
+        margin-bottom: 2rem;
+    }
+
+    .carousel-card {
+        width: 140px;
+    }
+
+    .carousel-track {
+        gap: 20px;
+        animation-duration: 40s;
+    }
+}
+
+/* Celulares Pequenos (até 600px) */
+@media (max-width: 600px) {
+    .section-header-action {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .shuffle-btn span:last-child {
+        display: none;
+    }
+
+    .modal-header-img { 
+        height: 200px; 
+    }
+
+    .modal-poster-wrapper { 
+        width: 90px; 
+        bottom: -30px; 
+    }
+
+    .modal-body { 
+        padding: 50px 20px 30px; 
+    }
+
+    .modal-body h2 { 
+        font-size: 1.5rem; 
     }
 }
