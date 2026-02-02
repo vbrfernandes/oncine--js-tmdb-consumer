@@ -5,6 +5,9 @@
 ![Badge CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Badge JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+
+https://vbrfernandes.github.io/oncine--js-tmdb-consumer/
+
 ## 💻 Sobre o Projeto
 
 **OnCine** é uma aplicação web *Front-End* responsiva desenvolvida para exploração de catálogos cinematográficos. O projeto consome a API do **The Movie Database (TMDB)** para oferecer aos usuários uma interface moderna, intuitiva e visualmente impactante (tema Dark/Neon) para descobrir filmes, ver sinopses, avaliações e lançamentos.
